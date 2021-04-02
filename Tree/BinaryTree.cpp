@@ -11,26 +11,20 @@ struct Node
         data = value;
         left = right = nullptr;
     }
-    ~Node()
-    {
-        delete left;
-        delete right;
-        cerr << "Destructor~~\n";
-    }
 };
 
 class BinaryTree
 {
-    Node* root;
     void insert(int value, Node* &parent);
     void preOrder(Node* parent);
     void postOrder(Node* node);
-    int depth(Node* node);
+    Node* find_min_value(Node* &node);
 public:
+    Node* root;
     BinaryTree() {root = nullptr;}
-    int depth();
+    int depth(Node* node);
     void insert(int value);
-    void erase(int value);
+    void erase(int value, Node* &node);
     bool find(int value);
     void preOrder();
     void postOrder();   
@@ -56,13 +50,8 @@ void BinaryTree::insert(int value, Node* &parent)
         if (value > parent->data)
             insert(value, parent->right);
     }
-
 }
 
-int BinaryTree::depth()
-{
-    return depth(root);
-}
 
 int BinaryTree::depth(Node* node)
 {
@@ -76,44 +65,47 @@ int BinaryTree::depth(Node* node)
         return lDepth + 1;
     else return rDepth + 1;
 }
-void BinaryTree::erase(int value)
+Node* BinaryTree::find_min_value(Node* &node)
 {
-    Node *p = root;
-    while (p != nullptr)
-    {
-        if (p->data == value) break;
-        else if (p->data > value)
-            p = p->left;
-        else 
-            p = p->right;
-    }
-    if (p == nullptr)
-    {
-        cerr << "Can't find the value!\n";
-        return ;
-    }
+    if (node->left == nullptr) return node;
+    find_min_value(node->left);
+    return node;
+}
+void BinaryTree::erase(int value, Node* &node)
+{
+    if (node == nullptr) return ;
+    if (node->data > value) 
+        erase(value, node->left);
+    else if (node->data < value)
+        erase(value, node->right);
     else
     {
-        if (p->left == nullptr && p->right == nullptr)
+        //th node khong co nhanh nao
+        if (node->left == nullptr && node->right == nullptr)
         {
-            p = nullptr;
-            delete p;
+            node = nullptr; delete node;
         }
-        else if (p->left == nullptr)
+        //th node co mot nhanh
+        else if (node->right == nullptr)
         {
-            p->data = p->right->data;
-            p->right = nullptr;
-            delete p->right;
+            Node* &temp = node->left;
+            node = temp;
+            temp = nullptr;
+            delete temp;
         }
-        else if (p->right == nullptr)
+        else if (node->left == nullptr)
         {
-            p = p->left;
-            p->left = nullptr;
-            delete p->left;
+            Node* &temp = node->right;
+            node = temp;
+            temp = nullptr;
+            delete temp;
         }
+        //node co ca hai nhanh
         else
         {
-
+            Node* temp = find_min_value(node->right);
+            node->data = temp->data;
+            erase(temp->data, node->right);
         }
     }
 }
@@ -168,6 +160,6 @@ int main()
     for (int i = 0; i < n; i++) 
         tree.insert(arr[i]);
     tree.preOrder();
-    tree.erase(7);
+    tree.erase(4, tree.root);
     tree.preOrder();
 }
