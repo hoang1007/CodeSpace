@@ -23,13 +23,11 @@ int main()
     for (; T; T--)
     {
         int l, r;
-        // cin >> l >> r;
-        l = 2;
-        r = 1e7;
+        cin >> l >> r;
         
-        vector<int> factorCount(1e7, 0);
-        countFactor(factorCount, 1e7);
-        
+        // vector<int> factorCount(r + 1, 0);
+        // countFactor(factorCount, r);
+
         int count = 0;
         for (int i = l; i <= r; i++)
             count += factorCount[i];
