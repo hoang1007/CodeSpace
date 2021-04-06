@@ -16,17 +16,18 @@ int main()
     int T; cin >> T;
     vector<int> factorCount(1e7, 0);
     countFactor(factorCount, 1e7);
+
+    int l, r;
     for (; T; T--)
     {
-        int l, r;
         cin >> l >> r;
         
         // vector<int> factorCount(r + 1, 0);
         // countFactor(factorCount, r);
 
         int count = 0;
-        for (int i = l; i <= r; i++)
-            count += factorCount[i];
+        for ( ; l <= r; l++)
+            count += factorCount[l];
 
         cout << count << endl;
     }
