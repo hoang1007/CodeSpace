@@ -1,18 +1,14 @@
 #include <iostream>
-#include <math.h>
 #include <vector>
+
 using namespace std;
 
 void countFactor(vector<int>& factorCount, const int& n)
 {
     for (int i = 2; i <= n; i++)
-    {
         if (factorCount[i] == 0)
-        {
             for (int j = i; j <= n; j += i)
                 factorCount[j] ++;
-        }
-    }
 }
 
 int main()
