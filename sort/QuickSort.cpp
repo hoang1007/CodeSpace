@@ -11,7 +11,7 @@ int main()
 {
     vector<int> data;
     ifstream input;
-    input.open("D:/Algorithms/sort/data", ios::in);
+    input.open("/home/hoang/Documents/DSA/sort/data", ios::in);
 
     while (!input.eof())
     {

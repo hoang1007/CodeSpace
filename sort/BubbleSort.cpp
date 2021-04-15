@@ -13,7 +13,7 @@ void BubbleSort(int arr[], int n)
 
 vector<int> input()
 {
-    fstream f("D:/Algorithms/sort/data");
+    fstream f("/home/hoang/Documents/DSA/sort/data");
     if (f.fail()) cerr << "Can't open file!\n";
 
     vector<int> res;
@@ -30,7 +30,7 @@ vector<int> input()
 
 void output(int *arr, int n)
 {
-    fstream f("D:/Algorithms/sort/output");
+    fstream f("/home/hoang/Documents/DSA/sort/ouput");
     if (f.fail()) cerr << "Can't open file!\n";
     for (int i = 0; i < n; i++)
         f << arr[i] << " ";

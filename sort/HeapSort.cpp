@@ -11,7 +11,7 @@ int main()
 {
     vector<int> data;
     ifstream input;
-    input.open("D:/Algorithms/sort/data", ios::in);
+    input.open("/home/hoang/Documents/DSA/sort/data", ios::in);
 
     while (!input.eof())
     {
@@ -27,8 +27,8 @@ int main()
 
     HeapSort(arr, n);
     
-    ofstream output("D:/Algorithms/sort/output", ios::out);
-
+    ofstream output("/home/hoang/Documents/DSA/sort/output", ios::out);
+    output.clear();
     for (int i = 0; i < n; i++)
         output << arr[i] << " ";
 }

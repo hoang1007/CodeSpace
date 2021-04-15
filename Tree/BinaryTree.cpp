@@ -155,11 +155,10 @@ void BinaryTree::postOrder(Node* node)
 int main()
 {
     BinaryTree tree;
-    int arr[] = {4, 3, 6, 8, 2, 0, 7, 2};
+    int arr[] = {10, 1, 6, 5, 8, 12, 3, 15, 9, 7, 13, 20};
     int n = sizeof(arr) / sizeof(*arr);
     for (int i = 0; i < n; i++) 
         tree.insert(arr[i]);
-    tree.preOrder();
-    tree.erase(4, tree.root);
+    cout << "PREORDER: " << endl;
     tree.preOrder();
 }
