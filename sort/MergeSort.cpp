@@ -1,90 +1,66 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
 using namespace std;
 
-void MergeSort(int arr[], int n);
-
-int main()
+vector<int> Merge(vector<int> a, vector<int> b)
 {
-    vector<int> data;
-    ifstream input;
-    input.open("D:/Algorithms/sort/data", ios::in);
+    vector<int> res;
 
-    if (input.fail())
-        cerr << "Can't open file\n";
-    while (!input.eof())
+    while (!a.empty() && !b.empty())
     {
-        //cout << "Reading...";
-        int n;
-        input >> n;
-        data.push_back(n);
-    }
-    int n = data.size();
-    int *arr = new int[n];
-    for (int i = 0; i < n; i++)
-        arr[i] = data[i];
-
-    MergeSort(arr, n);
-    
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-}
-
-void MergeSort(int arr[], int n)
-{
-    if (n == 1) return ;
-
-    int leftSize = n / 2,
-        rightSize = n - n / 2;
-    int *left = new int[leftSize],
-        *right = new int[rightSize];
-
-    //tach mang arr thanh hai phan left va right
-    for (int i = 0; i < leftSize; i++)
-        left[i] = arr[i];
-    for (int i = 0; i < rightSize; i++)
-        right[i] = arr[n / 2 + i];
-
-    //de quy de tach left va right cho den khi con 1 phan tu
-    MergeSort(left, leftSize);
-    MergeSort(right, rightSize);
-
-    //ghep hai mang left va right thanh arr
-    int left_iter = 0,
-        right_iter = 0,
-        arr_iter = 0;
-    while (arr_iter < n)
-    {
-        if (left_iter == leftSize)
+        if (a.empty())
+            for (int i = 0; i < b.size(); i++)
+                res.push_back(b[i]);
+        else if (b.empty())
+            for (int i = 0; i < a.size(); i++)
+                res.push_back(a[i]);
+        else if (a.back() > b.back())
         {
-            for (right_iter; right_iter < rightSize; right_iter++)
-            {
-                arr[arr_iter] = right[right_iter];
-                arr_iter++;
-            }
-            break;
-        }
-        if (right_iter == rightSize)
-        {
-            for (left_iter; left_iter < leftSize; left_iter++)
-            {
-                arr[arr_iter] = left[left_iter];
-                arr_iter++;
-            }
-        }
-        
-        if (left[left_iter] < right[right_iter])
-        {
-            arr[arr_iter] = left[left_iter];
-            arr_iter++;
-            left_iter++;
+            res.push_back(b.back());
+            b.pop_back();
         }
         else
         {
-            arr[arr_iter] = right[right_iter];
-            arr_iter++;
-            right_iter++;
+            res.push_back(a.back());
+            a.pop_back();
         }
     }
+
+    return res;
+}
+
+vector<int> MergeSort(vector<int> arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+        cout << arr[i] << " ";
+    cout << endl;
+    if (arr.size() == 1) return arr;
+    int pivot = arr.size() / 2;
+    vector<int> left, right;
+
+    for (int i = 0; i < pivot; i++)
+        left.push_back(arr[i]);
+    for (int i = pivot; i < arr.size(); i++)
+        right.push_back(arr[i]);
+
+    left = MergeSort(left);
+    right = MergeSort(right);
+
+    return Merge(left, right);
+}
+
+int main()
+{
+    // int arr[] = {1, 4, 3, 6, 7, 4, 9};
+    // vector<int> input;
+    // for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++)
+    //     input.push_back(arr[i]);
+
+    // vector<int> res = MergeSort(input);
+
+    // for (int i = 0; i < res.size(); i++)
+    //     cout << res[i] << " ";
+
+    int inpA[] = {1, 3, 5};
+    vector<int> a;
 }
