@@ -32,13 +32,13 @@ vector<Edge> Prim(vector<vector<int>> link, int vertex)
 {
     vector<Edge> res;
     vector<bool> visited(vertex + 1, false);
-    int currentNode = 1;
+    int currentNode = 0;
 
     vector<Edge> edges;
     while (res.size() < vertex - 1)
     {
         visited[currentNode] = true;
-        for (int i = 1; i <= vertex; i++)
+        for (int i = 0; i <= vertex; i++)
         {
             int distance_currentNode_i = link[currentNode][i];
             if (distance_currentNode_i && !visited[i])
@@ -58,6 +58,8 @@ vector<Edge> Prim(vector<vector<int>> link, int vertex)
                 }
             }
         }
+        while (visited[edges.back().to])
+            edges.pop_back();
         currentNode = edges.back().to;
         res.push_back(edges.back());
         edges.pop_back();
