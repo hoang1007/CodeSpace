@@ -1,66 +1,66 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector<int> Merge(vector<int> a, vector<int> b)
+void merge(int* arr, int begin, int mid, int end, int maxE)
 {
-    vector<int> res;
-
-    while (!a.empty() && !b.empty())
+    int i = begin, j = mid + 1,
+        k = begin;
+    
+    while (i <= mid && j <= end)
     {
-        if (a.empty())
-            for (int i = 0; i < b.size(); i++)
-                res.push_back(b[i]);
-        else if (b.empty())
-            for (int i = 0; i < a.size(); i++)
-                res.push_back(a[i]);
-        else if (a.back() > b.back())
+        if (arr[i] % maxE < arr[j] % maxE)
         {
-            res.push_back(b.back());
-            b.pop_back();
+            arr[k] += (arr[i] % maxE)*maxE;
+            i++;
         }
         else
         {
-            res.push_back(a.back());
-            a.pop_back();
+            arr[k] += (arr[j] % maxE)*maxE;
+            j++;
         }
+        k++;
     }
 
-    return res;
+    for (; i <= mid; i++, k++)
+        arr[k] += (arr[i] % maxE)*maxE;
+    for (; j <= end; j++, k++)
+        arr[k] += (arr[j] % maxE)*maxE;
+    
+    for (int i = begin; i <= end; i++)
+        arr[i] /= maxE;
 }
 
-vector<int> MergeSort(vector<int> arr)
+// Recursive merge sort with extra parameter, naxele
+void mergeSortRec(int arr[], int beg, int end, int maxele)
 {
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
-    cout << endl;
-    if (arr.size() == 1) return arr;
-    int pivot = arr.size() / 2;
-    vector<int> left, right;
+    if (beg < end)
+    {
+        int mid = (beg + end) / 2;
+        mergeSortRec(arr, beg, mid, maxele);
+        mergeSortRec(arr, mid + 1, end, maxele);
+        merge(arr, beg, mid, end, maxele);
+    }
+}
 
-    for (int i = 0; i < pivot; i++)
-        left.push_back(arr[i]);
-    for (int i = pivot; i < arr.size(); i++)
-        right.push_back(arr[i]);
-
-    left = MergeSort(left);
-    right = MergeSort(right);
-
-    return Merge(left, right);
+// This functions finds max element and calls recursive
+// merge sort.
+void mergeSort(int arr[], int n)
+{
+    int maxE = arr[0];
+    for (int i = 1; i < n; i++)
+        if (maxE < arr[i]) maxE = arr[i];
+    mergeSortRec(arr, 0, n - 1, maxE + 1);
 }
 
 int main()
 {
-    // int arr[] = {1, 4, 3, 6, 7, 4, 9};
-    // vector<int> input;
-    // for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++)
-    //     input.push_back(arr[i]);
+    int arr[] = {999, 612, 589, 856, 56, 945, 243};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    // vector<int> res = MergeSort(input);
+    mergeSort(arr, n);
 
-    // for (int i = 0; i < res.size(); i++)
-    //     cout << res[i] << " ";
-
-    int inpA[] = {1, 3, 5};
-    vector<int> a;
+    cout << "Sorted array \n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
 }
