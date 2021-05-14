@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "Other",
+        "sort",
+        "Graph"
+    ],
+    "cSpell.words": [
+        "Kruskal"
+    ]
+}
