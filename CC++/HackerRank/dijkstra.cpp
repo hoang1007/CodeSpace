@@ -17,38 +17,35 @@ vector<string> split(const string &);
  */
 
 vector<int> shortestReach(int n, vector<vector<int>> edges, int s) {
-    queue<int> qVertex;
-    vector<bool> known(n + 1, false);
     vector<int> dist(n + 1, -1);
+    vector<bool> picked(n + 1, false);
     
-    qVertex.push(s);
-    known[s] = true;
+    picked[s] = true;
     dist[s] = 0;
-
-    while (true)
-    {
-        int currentVertex = qVertex.front();
-        qVertex.pop();
-
-        for (int i = 0; i < edges.size(); i++)
-        {
-            if (edges[i][1] == currentVertex) swap(edges[i][0], edges[i][1]);
-            if (edges[i][0] == currentVertex)
-            {
-                if (!known[edges[i][1]])
-                {
-                    qVertex.push(edges[i][1]);
-                    known[edges[i][1]] = true;
-                }
-
-                if (dist[edges[i][1]] == -1 || dist[edges[i][1]] > dist[edges[i][0]] + edges[i][2])
-                    dist[edges[i][1]] = dist[edges[i][0]] + edges[i][2];
-            }
-        }
-
-        if (currentVertex == n) break;
+    for (int i = 0; i < edges.size(); i++) {
+        if (edges[i][0] == s) dist[edges[i][1]] = edges[i][2];
+        else if (edges[i][1] == s) dist[edges[i][0]] = edges[i][2];
     }
-
+    dist[0] = INT16_MAX;
+    for (int k = 0; k < n; k++) {
+        int minVertex = 0;
+        for (int i = 1; i <= n; i++)
+            if (!picked[i] && dist[i] > 0 && dist[i] < dist[minVertex])
+                minVertex = i;
+                
+        picked[minVertex] = true;
+        
+        for (int i = 0; i < edges.size(); i++) {
+            if (edges[i][0] == minVertex 
+            && (dist[edges[i][1]] == -1 || dist[minVertex] + edges[i][2] < dist[edges[i][1]]))
+                dist[edges[i][1]] = dist[minVertex] + edges[i][2];
+            
+            if (edges[i][1] == minVertex 
+            && (dist[edges[i][0]] == -1 || dist[minVertex] + edges[i][2] < dist[edges[i][0]]))
+                dist[edges[i][0]] = dist[minVertex] + edges[i][2];
+        }
+    }
+    
     dist.erase(dist.begin() + s);
     dist.erase(dist.begin());
     
@@ -97,9 +94,6 @@ int main()
         int s = stoi(ltrim(rtrim(s_temp)));
 
         vector<int> result = shortestReach(n, edges, s);
-
-        for (size_t i = 0; i < result.size(); i++)
-            cout << result[i] << " ";
 
         for (size_t i = 0; i < result.size(); i++) {
             fout << result[i];

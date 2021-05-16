@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "Other",
         "sort",
-        "Graph"
+        "Other",
+        "Graph",
+        "LuyenCode.net"
     ],
     "cSpell.words": [
         "Kruskal"
