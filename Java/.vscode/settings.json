@@ -2,10 +2,12 @@
     "java.project.sourcePaths": [
         "sort",
         "Other",
+        "LuyenCode.net",
         "Graph",
-        "LuyenCode.net"
+        "BigInteger"
     ],
     "cSpell.words": [
+        "Karatsuba",
         "Kruskal"
     ]
 }

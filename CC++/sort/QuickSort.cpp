@@ -1,65 +1,36 @@
 #include <iostream>
-#include <vector>
-#include <fstream>
 using namespace std;
 
-int partition(int arr[], int n, int lo, int hi);
-void QuickSort(int arr[], int n);
-
-
-int main()
-{
-    vector<int> data;
-    ifstream input;
-    input.open("/home/hoang/Documents/DSA/sort/data", ios::in);
-
-    while (!input.eof())
-    {
-        int n;  
-        input >> n;
-        data.push_back(n);
-    }
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high],
+        left = low,
+        right = high - 1;
     
-    int n = data.size();
-    int *arr = new int[n];
-
-    for (int i = 0; i < data.size(); i++)
-        arr[i] = data[i];
-    QuickSort(arr, n);
-    
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-}
-
-int partition(int arr[], int n, int lo, int hi)
-{
-    int pivot = arr[hi];
-    int left = lo,
-        right = hi - 1;
-    
-    while (true)
-    {
-        while (left < right && arr[left] < pivot)   left++;
-        while (left < right && arr[right] > pivot)  right--;
+    while (true) {
+        while (left <= right && arr[left] > pivot) left++;
+        while (left <= right && arr[right] < pivot) right--;
         if (left >= right) break;
-
-        swap(arr[left], arr[right]);  
+        swap(arr[left], arr[right]);
         left++; right--;
     }
-    swap(arr[left], arr[hi]);
+
+    swap(arr[left], arr[high]);
     return left;
 }
-void QuickSort(int arr[], int n, int lo, int hi)
-{
-    if (lo < hi)
-    {
-        int pivot = partition(arr, n, lo, hi);
 
-        QuickSort(arr, n, lo, pivot - 1);
-        QuickSort(arr, n, pivot + 1, hi);
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pivot = partition(arr, low, high);
+
+        quickSort(arr, low, pivot - 1);
+        quickSort(arr, pivot + 1, high);
     }
 }
-void QuickSort(int arr[], int n)
-{
-    QuickSort(arr, n, 0, n- 1);
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    quickSort(arr, 0, sizeof(arr)/sizeof(*arr) - 1);
+
+    for (int i : arr)
+        cout << i << " ";
 }

@@ -1,15 +1,16 @@
 #include <stdio.h>
 
+int pow(int n) {
+    int res = 1;
+    int a = 10;
+    for (; n; a *= a, n /= 2)
+        if (n % 2) res *= a;
+    return res;
+}
+
 int main() {
-    int t;  scanf("%d", &t);
-    while(t--) {
-        char s[200];
-        char x = ' ';
-        int count = 0;
-        while (x == ' ') {
-            scanf("%s%c", s, &x);
-            count++;
-        }
-        printf("%d\n", count);
+    int n;
+    while (scanf("%d", &n) != EOF) {
+        printf("%d\n", 9*pow( (n - 1)/2 ));
     }
 }
