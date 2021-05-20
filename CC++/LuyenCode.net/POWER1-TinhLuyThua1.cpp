@@ -2,7 +2,7 @@
 
 using namespace std;
 #define ll long long
-const int MOD = 1e9 + 7;
+int MOD;
 
 ll power(ll a, ll b)
 {
@@ -37,6 +37,6 @@ ll powerStr(string sa, string sb)
 int main()
 {
     string a, b;
-    cin >> a >> b;
+    cin >> a >> b >> MOD;
     cout << powerStr(a, b);
 }

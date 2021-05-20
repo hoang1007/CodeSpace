@@ -1,30 +1,49 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
+struct data
+{
+	int value;
+	int pos;
+};
+
+bool cmp(data a , data b)
+{
+	if(a.pos == b.pos) return a.value < b.value;
+	if(a.pos > b.pos) return true;
+	return false;
+}
 int main()
 {
-/*    string s;
-    getline(cin, s);
-    s += ',';
-    stringstream ss(s);
-    int x; char y;
-    vector <int> arr;
-    while(ss >> x >> y) arr.push_back(x); */
-    int x; char y;
-    vector <int> arr;
-    cin >> x;
-    arr.push_back(x);
-
-    while (cin >> y >> x)
-    {
-        arr.push_back(x);
-    }
-    // for (int i = 0; i < arr.size(); i++) cout << arr[i] << " ";
-    // cout << endl;
-    double average = 0, variance = 0;
-    for (int i = 0; i < arr.size(); i++) average += (double) arr[i]/arr.size();
-    for (int i = 0; i < arr.size(); i++) variance += (double) pow((arr[i] - average),2)/arr.size();
-    cout << average << endl
-         << variance;
-    return 0;
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+	int t;
+	cin>> t;
+	while(t--)
+	{
+		int n;
+		cin>> n;
+		vector<int> a(n);
+		vector<int> ts(100005,0);
+		vector<data> D(n);
+		for(int i =0; i < n ;i++)
+		{
+			cin>> a[i];
+			ts[a[i]]++;
+			
+		}
+		for(int i = 0 ; i < n; i++)
+		{
+			D[i].value = a[i];
+			D[i].pos = ts[a[i]];
+		}
+		sort(D.begin(),D.end(),cmp);
+		for(int i = 0; i < n ;i++)
+		{
+			cout<< D[i].value << " ";
+		}
+		cout<< endl;
+	}
+	
 }
