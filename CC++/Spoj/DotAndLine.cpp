@@ -9,7 +9,7 @@ struct Coordinate
 
 vector<double> findLine(Coordinate a, Coordinate b)
 {
-    // neu x bang nhau
+    // if equal
     if (a.x == b.x && a.y == b.y) return {0, 0};
     else if (a.x == b.x) return {(double) a.x, 0};
     else if (a.y == b.y) return {0, (double) a.y};
