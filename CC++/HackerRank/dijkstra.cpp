@@ -17,38 +17,33 @@ vector<string> split(const string &);
  */
 
 vector<int> shortestReach(int n, vector<vector<int>> edges, int s) {
-    vector<int> dist(n + 1, -1);
-    vector<bool> picked(n + 1, false);
+    #define _from [0] 
+    #define _to [1] 
+    #define _dist [2]
+    #define INF -1
     
-    picked[s] = true;
+    vector<int> dist(n + 1, INF);
+    vector<bool> picked(n + 1, false);
+
     dist[s] = 0;
-    for (int i = 0; i < edges.size(); i++) {
-        if (edges[i][0] == s) dist[edges[i][1]] = edges[i][2];
-        else if (edges[i][1] == s) dist[edges[i][0]] = edges[i][2];
-    }
-    dist[0] = INT16_MAX;
-    for (int k = 0; k < n; k++) {
+    dist[0] = INT32_MAX;
+    for (int c = 0; c < n - 1; c++) {
         int minVertex = 0;
         for (int i = 1; i <= n; i++)
-            if (!picked[i] && dist[i] > 0 && dist[i] < dist[minVertex])
+            if (!picked[i] && dist[i] != INF && dist[i] < dist[minVertex])
                 minVertex = i;
-                
         picked[minVertex] = true;
-        
+
         for (int i = 0; i < edges.size(); i++) {
-            if (edges[i][0] == minVertex 
-            && (dist[edges[i][1]] == -1 || dist[minVertex] + edges[i][2] < dist[edges[i][1]]))
-                dist[edges[i][1]] = dist[minVertex] + edges[i][2];
-            
-            if (edges[i][1] == minVertex 
-            && (dist[edges[i][0]] == -1 || dist[minVertex] + edges[i][2] < dist[edges[i][0]]))
-                dist[edges[i][0]] = dist[minVertex] + edges[i][2];
+            if (edges[i]_to == minVertex) swap(edges[i]_from, edges[i]_to);
+            if (edges[i]_from == minVertex) {
+                if (dist[edges[i]_to] == INF || dist[edges[i]_to] > dist[minVertex] + edges[i]_dist)
+                    dist[edges[i]_to] = dist[minVertex] + edges[i]_dist;
+            }
         }
     }
-    
     dist.erase(dist.begin() + s);
     dist.erase(dist.begin());
-    
     return dist;
 }
 
