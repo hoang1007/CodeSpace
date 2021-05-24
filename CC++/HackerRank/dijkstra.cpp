@@ -17,34 +17,37 @@ vector<string> split(const string &);
  */
 
 vector<int> shortestReach(int n, vector<vector<int>> edges, int s) {
-    #define _from [0] 
-    #define _to [1] 
-    #define _dist [2]
     #define INF -1
+    #define pair pair<int, int>
+    #define to second
+    #define dist first
     
-    vector<int> dist(n + 1, INF);
-    vector<bool> picked(n + 1, false);
+    vector<vector<pair>> adjacent(n + 1);
+    for (int i = 0; i < edges.size(); i++) {
+        adjacent[edges[i][0]].push_back(make_pair(edges[i][2], edges[i][1]));
+        adjacent[edges[i][1]].push_back(make_pair(edges[i][2], edges[i][0]));
+    }
 
-    dist[s] = 0;
-    dist[0] = INT32_MAX;
-    for (int c = 0; c < n - 1; c++) {
-        int minVertex = 0;
-        for (int i = 1; i <= n; i++)
-            if (!picked[i] && dist[i] != INF && dist[i] < dist[minVertex])
-                minVertex = i;
-        picked[minVertex] = true;
+    priority_queue<pair, vector<pair>, greater<pair>> q;
+    vector<int> distFromStart(n + 1, INF);
+    distFromStart[s] = 0;
+    q.push(make_pair(0, s));
 
-        for (int i = 0; i < edges.size(); i++) {
-            if (edges[i]_to == minVertex) swap(edges[i]_from, edges[i]_to);
-            if (edges[i]_from == minVertex) {
-                if (dist[edges[i]_to] == INF || dist[edges[i]_to] > dist[minVertex] + edges[i]_dist)
-                    dist[edges[i]_to] = dist[minVertex] + edges[i]_dist;
+    while (!q.empty()) {
+        int minVertex = q.top().to;
+        int minDist = q.top().dist;
+        q.pop();
+
+        for (auto i = adjacent[minVertex].begin(); i != adjacent[minVertex].end(); i++) {
+            if (distFromStart[i->to] == INF || distFromStart[i->to] > distFromStart[minVertex] + i->dist) {
+                distFromStart[i->to] = distFromStart[minVertex] + i->dist;
+                q.push(make_pair(distFromStart[i->to], i->to));
             }
         }
     }
-    dist.erase(dist.begin() + s);
-    dist.erase(dist.begin());
-    return dist;
+    distFromStart.erase(distFromStart.begin() + s);
+    distFromStart.erase(distFromStart.begin());
+    return distFromStart;
 }
 
 int main()
