@@ -33,6 +33,17 @@ struct Edge {
     }
 };
 
+bool sameParent(vector<int>& root, Edge k) {
+    int node1 = k.to, node2 = k.from;
+    while (root[node1] != node1) node1 = root[node1];
+    while (root[node2] != node2) node2 = root[node2];
+    if (node1 == node2) return true;
+    else {
+        root[node2] = node1;
+        return false;
+    }
+}
+
 int kruskals(int g_nodes, vector<int> g_from, vector<int> g_to, vector<int> g_weight) {
     int minCosts = 0;
     priority_queue<Edge, vector<Edge>, greater<Edge>> q;
@@ -44,12 +55,9 @@ int kruskals(int g_nodes, vector<int> g_from, vector<int> g_to, vector<int> g_we
         root[i] = i;
     
     for (int c = 0; c < g_nodes - 1; c++) {
-        while (root[q.top().to] == root[q.top().from])
+        while (sameParent(root, q.top()))
             q.pop();
         minCosts += q.top().cost;
-        for (int i = 0; i < root.size(); i++)
-            if (root[i] == root[q.top().to])
-                root[i] = root[q.top().from];
         q.pop();
     }
     return minCosts;
