@@ -4,7 +4,8 @@
         "Other",
         "LuyenCode.net",
         "Graph",
-        "BigInteger"
+        "BigInteger",
+        "Graphics"
     ],
     "cSpell.words": [
         "Karatsuba",

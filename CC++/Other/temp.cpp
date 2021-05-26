@@ -1,20 +1,27 @@
-#include <iostream>
-#include <queue>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+struct Edge {
+    int from, to, cost;
+    Edge(int _from, int _to, int _cost) {
+        from = _from;
+        to = _to;
+        cost = _cost;
+    }
+    bool operator > (const Edge &src) const {
+        return cost > src.cost;
+    }
+};
 
-    priority_queue<int, vector<int>, greater<int>> pq;
-    int arr[] = {4, 1, 6, 3, 8, 9, 5};
-    for (int i : arr)
-        pq.push(i);
-    
-    while (!pq.empty()) {
-        cout << pq.top() << " ";
-        pq.pop();
+int main() {
+    priority_queue<Edge, vector<Edge>, greater<Edge>> q;
+    q.push(Edge(1, 2, 5));
+    q.push(Edge(2, 3, 1));
+    q.push(Edge(3, 4, 7));
+    q.push(Edge(4, 4, 0));
+
+    while (!q.empty()) {
+        q.top().print();
+        q.pop();
     }
 }

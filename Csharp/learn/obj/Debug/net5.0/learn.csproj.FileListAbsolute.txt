@@ -1,0 +1,16 @@
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.exe
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.deps.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.runtimeconfig.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.runtimeconfig.dev.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\ref\learn.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\bin\Debug\net5.0\learn.pdb
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.csprojAssemblyReference.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.AssemblyInfoInputs.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.AssemblyInfo.cs
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.csproj.CoreCompileInputs.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\ref\learn.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.pdb
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\learn\obj\Debug\net5.0\learn.genruntimeconfig.cache

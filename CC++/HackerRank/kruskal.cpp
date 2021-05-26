@@ -21,32 +21,38 @@ vector<string> split(const string &);
  * 3. An edge exists between <name>_from[i] and <name>_to[i]. The weight of the edge is <name>_weight[i].
  *
  */
-
+struct Edge {
+    int from, to, cost;
+    Edge(int from, int to, int cost) {
+        this->from = from;
+        this->to = to;
+        this->cost = cost;
+    }
+    bool operator > (const Edge& src) const {
+        return cost > src.cost;
+    }
+};
 
 int kruskals(int g_nodes, vector<int> g_from, vector<int> g_to, vector<int> g_weight) {
-    // sort
-    for (int i = 0; i < g_weight.size() - 1; i++)
-        for (int j = i + 1; j < g_weight.size(); j++)
-            if (g_weight[i] > g_weight[j]) {
-                swap(g_from[i], g_from[j]);
-                swap(g_to[i], g_to[j]);
-                swap(g_weight[i], g_weight[j]);
-            }
+    int minCosts = 0;
+    priority_queue<Edge, vector<Edge>, greater<Edge>> q;
+    for (int i = 0; i < g_from.size(); i++)
+        q.push(Edge(g_from[i], g_to[i], g_weight[i]));
+    
     vector<int> root(g_nodes + 1);
-    for (int i = 1; i <= g_nodes; i++)
+    for (int i = 0; i <= g_nodes; i++)
         root[i] = i;
-    int count = 0;
-    int sumWeight = 0;
-    for (int i = 0; i < g_from.size() && count <= g_nodes; i++) {
-        if (root[g_from[i]] != root[g_to[i]]) {
-            root[g_to[i]] = root[g_from[i]];
-            for (int j = 1; j <= g_nodes; j++)
-                if (root[j] == g_to[i]) root[j] = root[g_from[i]];
-            sumWeight += g_weight[i];
-            count++;
-        }
+    
+    for (int c = 0; c < g_nodes - 1; c++) {
+        while (root[q.top().to] == root[q.top().from])
+            q.pop();
+        minCosts += q.top().cost;
+        for (int i = 0; i < root.size(); i++)
+            if (root[i] == root[q.top().to])
+                root[i] = root[q.top().from];
+        q.pop();
     }
-    return sumWeight;
+    return minCosts;
 }
 
 int main()
@@ -82,7 +88,7 @@ int main()
 
     int res = kruskals(g_nodes, g_from, g_to, g_weight);
 
-    cout << res;
+    fout << res;
 
     fout.close();
 
