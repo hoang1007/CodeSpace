@@ -1,75 +1,73 @@
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
 
-#define MAX INT8_MAX
+#define INF 999999999
 
-int vertex, edges;
-void printPath(vector<int> pre, int start, int end)
-{
-    if (start == end)
-    {
-        cout << start << " => ";
+struct dest {
+    int vertex;
+    int distance;
+    dest(int _vertex, int _distance) {
+        vertex = _vertex;
+        distance = _distance;
+    }
+};
+
+void print(vector<int> pre, int start, int end) {
+    if (start == end) {
+        cout << start << " ";
         return ;
     }
-    printPath(pre, start, pre[end]);
-    cout << end << " => ";
+    print(pre, start, pre[end]);
+    cout << end << " ";
 }
 
-void Dijkstra(vector<vector<int>> Map, int start, int end)
-{
-    vector<int> pre(vertex + 1),    // lưu lại đỉnh trước đó
-                dist(vertex + 1, MAX);  // lưu lại khoảng cách (được khởi tạo ban đầu là vô cùng)
-    vector<bool> known(vertex + 1, false);  // lưu lại các đỉnh đã đi qua 
+void dijkstra(int vertices, const vector<vector<dest>> &adjacency, int start, int end) {
+    vector<int> pre(vertices + 1);
+    for (int i = 0; i < pre.size(); i++)
+        pre[i] = i;
 
-    dist[start] = 0;    // khởi tạo khoảng cách đến điểm xuất phát là 0
-    queue<int> qVertex; // hàng đợi lưu các đỉnh để xét 
-    qVertex.push(start);
-    known[start] = true;
+    vector<int> dist(vertices + 1, INF);
+    vector<bool> known(vertices + 1, false);
 
-    while (!qVertex.empty())
-    {
-        int currentVertex = qVertex.front();    // cập nhật đỉnh đang xét hiện tại 
-        qVertex.pop();
+    dist[start] = 0;
+    for (int c = 0; c < vertices; c++) {
+        int minDist = INF, minVertex = 0;
+        for (int i = 0; i < vertices; i++) {
+            if (dist[i] < minDist && !known[i]) {
+                minDist = dist[i];
+                minVertex = i;
+            }
+        }
 
-        for (int i = 0; i < Map[currentVertex].size(); i++)
-        {
-            if (Map[currentVertex][i])  // nếu có đường đi từ đỉnh hiện tại đến đỉnh đang tìm 
-            {
-                if (!known[i])  // nếu chưa xét 
-                {
-                    qVertex.push(i);
-                    known[i] = true;
-                }
-                // tính khoảng cách từ đỉnh xuất phát đến đỉnh đang xét qua đỉnh hiện tại 
-                int distFromStart = dist[currentVertex] + Map[currentVertex][i];
-                if (distFromStart < dist[i])    // nếu nhỏ hơn khoảng cách cũ của đỉnh đang xét 
-                {                               // cập nhật đỉnh đi và khoảng cách 
-                    pre[i] = currentVertex; 
-                    dist[i] = distFromStart;
-                }
+        known[minVertex] = true;
+
+        for (int i = 0; i < adjacency[minVertex].size(); i++) {
+            if (dist[ adjacency[minVertex][i].vertex ] > dist[minVertex] + adjacency[minVertex][i].distance) {
+                dist[ adjacency[minVertex][i].vertex ] = dist[minVertex] + adjacency[minVertex][i].distance;
+                pre[ adjacency[minVertex][i].vertex ] = minVertex;
             }
         }
     }
 
-    printPath(pre, start, end);
+    print(pre, start, end);
 }
 
-int main()
-{
-    cin >> vertex >> edges;
-    
-    vector<vector<int>> Map(vertex + 1, vector<int> (vertex + 1, 0));
+int main() {
+    int vertices, edges;
+    cin >> vertices >> edges;
 
-    for (int i = 0; i < edges; i++)
-    {
-        int from, to, dist;
-        cin >> from >> to >> dist;
-        Map[from][to] = Map[to][from] = dist;
+    vector<vector<dest>> adjacency(vertices + 1);
+    for (int i = 0; i < edges; i++) {
+        int v1, v2, dist;
+        cin >> v1 >> v2 >> dist;
+        adjacency[v1].push_back(dest(v2, dist));
+        adjacency[v2].push_back(dest(v1, dist));
     }
 
     int start, end;
     cin >> start >> end;
-    Dijkstra(Map, start, end);
+
+    dijkstra(vertices, adjacency, start, end);
 }

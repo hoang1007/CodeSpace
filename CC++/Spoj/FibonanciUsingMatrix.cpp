@@ -34,7 +34,7 @@ struct mat_2
                 (a.x2 * b.x1 + a.y2 * b.x2) % MOD, (a.x2 * b.y1 + a.y2 * b.y2) % MOD);
     }
 
-    void prll()
+    void print()
     {
         cout << x1 << " " << y1 << endl << x2 << " " << y2 << endl;
     }
@@ -65,7 +65,7 @@ struct mat_1
     {
         return mat_1(a.x1 * b.x + a.y1 * b.y, a.x2 * b.x + a.y2 * b.y);
     }
-    void prll()
+    void print()
     {
         cout << x << endl << y << endl;
     }
