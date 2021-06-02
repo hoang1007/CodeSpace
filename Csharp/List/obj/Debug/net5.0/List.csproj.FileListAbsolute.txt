@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\ref\List.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\bin\Debug\net5.0\List.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.csprojAssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\ref\List.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\List\obj\Debug\net5.0\List.genruntimeconfig.cache
