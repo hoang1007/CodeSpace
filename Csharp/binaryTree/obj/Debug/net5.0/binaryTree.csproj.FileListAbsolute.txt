@@ -1,0 +1,16 @@
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.csprojAssemblyReference.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.AssemblyInfoInputs.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.AssemblyInfo.cs
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.csproj.CoreCompileInputs.cache
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.exe
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.deps.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.runtimeconfig.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.runtimeconfig.dev.json
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\ref\binaryTree.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\bin\Debug\net5.0\binaryTree.pdb
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\ref\binaryTree.dll
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.pdb
+C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\binaryTree\obj\Debug\net5.0\binaryTree.genruntimeconfig.cache
