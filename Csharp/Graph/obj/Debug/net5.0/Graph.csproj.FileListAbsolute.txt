@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\ref\Graph.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\bin\Debug\net5.0\Graph.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.csprojAssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\ref\Graph.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Graph\obj\Debug\net5.0\Graph.genruntimeconfig.cache

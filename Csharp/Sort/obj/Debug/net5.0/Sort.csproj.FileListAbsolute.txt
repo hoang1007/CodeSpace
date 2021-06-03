@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\ref\Sort.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\bin\Debug\net5.0\Sort.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.csprojAssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\ref\Sort.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\Sort\obj\Debug\net5.0\Sort.genruntimeconfig.cache

@@ -1,0 +1,76 @@
+﻿using System.Collections.Generic;
+using System;
+
+namespace Graph
+{
+    public partial class Program
+    {
+        public class Edge : IComparable<Edge>
+        {
+            public int v;
+            public int cost;
+            public Edge(int v, int cost) 
+            {
+                this.v = v;
+                this.cost = cost;
+            }
+            public Edge()
+            {
+                v = cost = 0;
+            }
+            public Edge(int v)  // for unWeight graph
+            {
+                this.v = v;
+                cost = 0;
+            }
+            
+            public override string ToString()
+            {
+                return "to " + v + " | cost " + cost;
+            }
+            public int CompareTo(Edge other) 
+            {
+                return this.cost.CompareTo(other.cost);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            string[] tokens = Console.ReadLine().Split();
+
+            int vertices = int.Parse(tokens[0]),
+                edges = int.Parse(tokens[1]);
+            
+            List<List<Edge>> adj = new List<List<Edge>>(vertices + 1);
+            for (int i = 0; i <= vertices; i++)
+                adj.Add(new List<Edge>());
+            while (edges-- > 0)
+            {
+                tokens = Console.ReadLine().Split();
+                int v1 = int.Parse(tokens[0]),
+                    v2 = int.Parse(tokens[1]),
+                    cost = int.Parse(tokens[2]);
+                
+                adj[v1].Add(new Edge(v2, cost));
+                adj[v2].Add(new Edge(v1, cost));
+            }
+
+            PriorityQueue<Edge> q = new PriorityQueue<Edge>();
+            foreach (var item in adj)
+                foreach(var edge in item)
+                    q.push(edge);
+            
+            Algorithms a = new Algorithms();
+
+            int[] order = a.dfsTraversal(vertices, adj, 1);
+            foreach(int vertex in order)
+                Console.Write(vertex + " ");
+            // for (int i = 0; i < adj.Count; i++)
+            // {
+            //     for (int j = 0; j < adj[j].Count; j++)
+            //         Console.Write(adj[i][j].ToString());
+            //     Console.WriteLine();
+            // }
+        }
+    }
+}
