@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Graph
@@ -26,17 +25,17 @@ namespace Graph
         {
             int left = 2*nodeIndex + 1,
                 right = 2*nodeIndex + 2,
-                largest = nodeIndex;
+                smallest = nodeIndex;
             
-            if (left < data.Count && Comparer<T>.Default.Compare(data[left], data[largest]) > 0)
-                largest = left;
-            if (right < data.Count && Comparer<T>.Default.Compare(data[right], data[largest]) > 0)
-                largest = right;
+            if (left < data.Count && Comparer<T>.Default.Compare(data[left], data[smallest]) < 0)
+                smallest = left;
+            if (right < data.Count && Comparer<T>.Default.Compare(data[right], data[smallest]) < 0)
+                smallest = right;
             
-            if (largest != nodeIndex)
+            if (smallest != nodeIndex)
             {
-                swap(largest, nodeIndex);
-                heapify(largest);
+                swap(smallest, nodeIndex);
+                heapify(smallest);
             }
         }
 
