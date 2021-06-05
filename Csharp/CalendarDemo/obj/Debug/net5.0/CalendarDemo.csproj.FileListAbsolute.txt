@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.csproj.AssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\ref\CalendarDemo.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\bin\Debug\net5.0\CalendarDemo.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\ref\CalendarDemo.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\CalendarDemo\obj\Debug\net5.0\CalendarDemo.genruntimeconfig.cache
