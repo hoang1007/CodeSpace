@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"files.associations": {
+			"*.cs": "csharp",
 			"iostream": "cpp",
 			"vector": "cpp",
 			"array": "cpp",
@@ -14,7 +15,8 @@
 			"initializer_list": "cpp",
 			"regex": "cpp",
 			"utility": "cpp",
-			"valarray": "cpp"
+			"valarray": "cpp",
+			"iosfwd": "cpp"
 		},
 		"cSpell.words": [
 			"kruskal",

@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.csproj.AssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\ref\sortList.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\bin\Debug\net5.0\sortList.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\ref\sortList.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\sortList\obj\Debug\net5.0\sortList.genruntimeconfig.cache

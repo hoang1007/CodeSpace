@@ -1,0 +1,16 @@
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.csproj.AssemblyReference.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.AssemblyInfoInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.AssemblyInfo.cs
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.csproj.CoreCompileInputs.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.exe
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.deps.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.runtimeconfig.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.runtimeconfig.dev.json
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\ref\basic.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\bin\Debug\net5.0\basic.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\ref\basic.dll
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.pdb
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\basic\obj\Debug\net5.0\basic.genruntimeconfig.cache

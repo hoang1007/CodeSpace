@@ -5,7 +5,6 @@ C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\bin\Debug\net5.0\test.ru
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\bin\Debug\net5.0\test.dll
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\bin\Debug\net5.0\ref\test.dll
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\bin\Debug\net5.0\test.pdb
-C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.csprojAssemblyReference.cache
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.AssemblyInfoInputs.cache
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.AssemblyInfo.cs
@@ -14,3 +13,4 @@ C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.dl
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\ref\test.dll
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.pdb
 C:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.genruntimeconfig.cache
+c:\Users\hoang\OneDrive\Documents\CodeSpace\Csharp\test\obj\Debug\net5.0\test.csproj.AssemblyReference.cache
