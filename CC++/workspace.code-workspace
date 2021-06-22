@@ -16,9 +16,12 @@
 			"regex": "cpp",
 			"utility": "cpp",
 			"valarray": "cpp",
-			"iosfwd": "cpp"
+			"iosfwd": "cpp",
+			"*.tcc": "cpp",
+			"fstream": "cpp"
 		},
 		"cSpell.words": [
+			"Zeller's",
 			"kruskal",
 			"valarray"
 		]

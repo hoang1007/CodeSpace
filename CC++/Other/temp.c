@@ -1,37 +1,57 @@
 #include <stdio.h>
 
-int main()
-{
-    int max[] = {-100000, -100000, -100000};
-    int min[] = {100000, 100000, 100000};
+const int N = 100;
 
+int sum_of_odd_divisible_by_three(int n, int arr[][N]);
+double average_of_subdiagonal(int n, int arr[][N]);
+void show_2nd_column(int n, int arr[][N]);
+
+int main() {
     int n;
     scanf("%d", &n);
-    while (n--)
-    {
-        int x;
-        scanf("%d", &x);
-        // -> max <-
-        for (int i = 0; i < 3; i++)
-            if (max[i] < x)
-            {
-                for (int j = 1; j >= i; j--)
-                    max[j + 1] = max[j];
-                max[i] = x;
-                break;
-            }
 
-        // -> min <-
-        for (int i = 0; i < 3; i++)
-            if (min[i] > x)
-            {
-                for (int j = 1; j >= i; j--)
-                    min[j + 1] = min[j];
-                min[i] = x;
-                break;
-            }
+    int arr[n][N];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+    
+    printf("Tong cac so le duong chia het cho 3 la: %d\n", sum_of_odd_divisible_by_three(n, arr));
+    printf("Trung binh cong cac so tren duong cheo phu la: %.2lf\n", average_of_subdiagonal(n, arr));
+    printf("Cac phan tu o cot 2 la:\n"); show_2nd_column(n, arr);
+}
+
+int sum_of_odd_divisible_by_three(int n, int arr[][N]) {
+    int res = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if (arr[i][j] > 0 && arr[i][j] % 3 == 0)
+                res += arr[i][j];
+    return res;
+}
+
+double average_of_subdiagonal(int n, int arr[][N]) {
+    int size = n*n - 4;
+   
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            sum += arr[i][j];
+    sum -= arr[0][0] + arr[0][n - 1] + arr[n - 1][0] + arr[n - 1][n - 1];
+
+    if (n % 2) {
+        sum -= arr[n/2][n/2];
+        size--;
     }
 
-    int p1 = max[0] * max[1] * max[2], p2 = min[0] * min[1] * max[0];
-    printf("%d", p1 > p2 ? p1 : p2);
+    return (double) sum / size;
+}
+
+void show_2nd_column(int n, int arr[][N]) {
+    if (n < 2) {
+        printf("invalid");
+        return ;
+    }
+
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i][1]);
 }

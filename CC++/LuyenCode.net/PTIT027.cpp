@@ -1,27 +1,27 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main() {
-    int t;  scanf("%d", &t);
-    char s[100001];
-    while (t--) {
-        scanf("%*[\n]%[^\n]", s);
-        int brackets = 0;
-        int count = 0;
-        int max = 0;
-        for (int i = 0; s[i] != '\0'; i++) {
-            if (s[i] == '(') brackets++;
-            else if (s[i] == ')') {
-                if (brackets) {
-                    brackets--;
-                    count++;
-                }
-                else {
-                    if (max < count) max = count;
-                    count = 0;
-                }
+int countLegal(string s) {
+    if (s.length() == 0) return 0;
+    int k = 0, count = 0;
+    for (auto i : s) {
+        if (i == '(') k++;
+        else if (i == ')') {
+            if (k > 0) {
+                count++;
+                k--;
             }
         }
-        if (max < count) max = count;
-        printf("%d\n", 2*max);
+    }
+
+    return count;
+}
+
+int main() {
+    string s;
+    int n;  cin >> n;
+    while (n--) {
+        cin >> s;
+        cout << 2*countLegal(s) << endl;
     }
 }

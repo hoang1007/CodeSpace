@@ -36,6 +36,14 @@ void quickSort(T arr[], int left, int right, bool reverse = true) {
     }
 }
 
+int convertInt(char sc[]) {
+    int res = 0;
+    int i = sc[0] == '-' ? 1 : 0;
+    for (; sc[i] != '\0'; i++)
+        res = 10*res + sc[i] - '0';
+    return sc[0] == '-' ? -res : res;
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr), cout.tie(nullptr);
@@ -47,13 +55,17 @@ int main() {
     
     for (auto &item : arr) {
         stringstream ss; ss << item;
-        string s; ss >> s;
-        bool reverse = s[0] != '-';
-        char* sc = strcpy(new char[5], s.c_str());
-        quickSort(sc, reverse ? 0 : 1, s.length() - 1, reverse);
-        
-        stringstream convert(sc);
-        convert >> item;
+        string k; ss >> k;
+        char* sc = strcpy(new char[5], k.c_str());
+        bool reverse = true;
+        if (sc[0] == '-') reverse = false;
+        quickSort(sc, reverse ? 0 : 1, strlen(sc) - 1, reverse);
+        if (sc[0] == '-' && sc[1] == '0') {
+            int i = 1;
+            for (; sc[i] == '0'; i++);
+            swap(sc, 1, i);
+        }
+        item = convertInt(sc);
     }
 
     quickSort(arr, 0, n - 1);
