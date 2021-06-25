@@ -30,20 +30,11 @@ int sum_of_odd_divisible_by_three(int n, int arr[][N]) {
 }
 
 double average_of_subdiagonal(int n, int arr[][N]) {
-    int size = n*n - 4;
-   
     int sum = 0;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
-            sum += arr[i][j];
-    sum -= arr[0][0] + arr[0][n - 1] + arr[n - 1][0] + arr[n - 1][n - 1];
+    for (int i = 0, j = n - 1; i < n; i++, j--)
+        sum += arr[i][j];
 
-    if (n % 2) {
-        sum -= arr[n/2][n/2];
-        size--;
-    }
-
-    return (double) sum / size;
+    return (double) sum / n;
 }
 
 void show_2nd_column(int n, int arr[][N]) {

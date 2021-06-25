@@ -1,81 +1,52 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-long long binary(long long a[], long long x,long long n)
+long long pow2(long long n)
 {
-    long long left = 0, right = n-1;
-    long long distance = 1e9+10;
-    long long res = -1;
-    while(left <= right)
+    if (n < 2)
+        return n + 1;
+    long long x = pow2(n / 2);
+    if (n % 2 == 0)
+        return x * x;
+    return 2 * x * x;
+}
+
+int solve(long long n)
+{
+    long long x = floor(log2(n)) + 1;
+    long long mid = pow2(x) / 2;
+    while (x)
     {
-        long long mid = (left + right)/2;
-        if(x == a[mid]) return mid;
-        else if(x < a[mid])
+        if (x == 1)
         {
-            long long space  = a[mid] - x;
-            if(space < distance)
-            {
-                distance = space;
-                res = mid;
-            }
-            right = mid - 1;
+            cout << 1;
+            break;
         }
-        else
+        if (mid == n)
         {
-            long long space = x - a[mid];
-            if(space < distance)
-            {
-                distance = space;
-                res = mid;
-            }
-            left = mid + 1;
+            cout << x;
+            break;
         }
+        if (n > mid)
+        {
+            n = 2 * mid - n;
+        }
+        x--;
+        mid /= 2;
     }
-    return res;
+    cout << " ";
 }
 
 int main()
 {
-    long long n,q;
-    cin>> n >> q;
-    long long a[n];
-    for(long long i = 0 ; i < n; i++)
+    int n;
+    cin >> n;
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++)
     {
-        cin>> a[i];
+        cin >> a[i];
     }
-    sort(a,a+n);
-    while(q--)
+    for (int i = 0; i < n; i++)
     {
-        long long x,k;
-        cin>> x >> k;
-        long long i = binary(a,x,n);
-        
-        long long left = i-1, right = i;
-        
-        while(k--)
-        {
-            if (left >= 0 && right < n) {
-                long long leftspace = a[i]-a[left];
-                long long rightspace  = a[right]-a[i];
-
-                if (leftspace <= rightspace) {
-                    cout << a[left] << " ";
-                    left--;
-                }
-                else {
-                    cout << a[right] << " ";
-                    right++;
-                }
-            }
-            else if (left >= 0) {
-                cout << a[left] << " ";
-                left--;
-            }
-            else if (right < n) {
-                cout << a[right] << " ";
-                right++;
-            }
-        }
-        cout<< endl;
+        cout << solve(a[i]);
     }
 }
