@@ -117,4 +117,8 @@ public class Graph {
 
         return minSpanning;
     }
+
+    public void floyd() {
+        
+    }
 }
