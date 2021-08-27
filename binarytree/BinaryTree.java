@@ -1,45 +1,30 @@
 public class BinaryTree {
     public class Node {
-        public int value;
-        public Node left, right;
+        int value;
+        Node left, right;
 
         public Node(int value) {
             this.value = value;
-            left = right = null;
         }
     }
 
-    Node root = null;
-
-    private Node insert(Node root, Node node) {
-        if (root == null)
-            return node;
-
-        if (node.value < root.value)
-            root.left = insert(root.left, node);
-        else if (node.value > root.value)
-            root.right = insert(root.right, node);
-
-        return root;
+    Node root;
+    public BinaryTree() {
+        root = null;
     }
 
-    public void insert(int value) {
-        root = insert(root, new Node(value));
-    }
-
-    private boolean find(Node node, int value) {
+    private Node insert(Node node, int value) {
         if (node == null)
-            return false;
+            return new Node(value);
         if (value < node.value)
-            return find(node.left, value);
+            node.left = insert(node.left, value);
         else if (value > node.value)
-            return find(node.right, value);
-
-        return true;
+            node.right = insert(node.right, value);
+        
+        return node;
     }
-
-    public boolean find(int value) {
-        return find(root, value);
+    public void insert(int value) {
+        root = insert(root, value);
     }
 
     private Node remove(Node node, int value) {
@@ -50,77 +35,77 @@ public class BinaryTree {
         else if (value > node.value)
             node.right = remove(node.right, value);
         else {
-            // if node found
-            // if node is leaf (has no child node)
+            // neu node khong co node con
             if (node.left == null && node.right == null)
                 return null;
-            // if node has one child node
-            else if (node.right == null)
-                return node.left;
-            else if (node.left == null)
+            // neu node co mot node con
+            if (node.left == null)
                 return node.right;
-            // if node has two child node
-            else {
-                // find most left of right subtree
-                Node mostLeft = node.right;
-                for (; mostLeft.left != null; mostLeft = mostLeft.left)
-                    ;
-                Utilities.swapData(node, mostLeft);
-                node.right = remove(node.right, mostLeft.value);
-            }
+            if (node.right == null)
+                return node.left;
+            // neu node co hai node con
+            // tim node trai nhat cua cay con ben phai 
+            Node mostLeft = node.right;
+            for (; mostLeft.left != null; mostLeft = mostLeft.left)
+                ;
+            // swap value of two nodes
+            Util.swap(mostLeft, node);
+            // de quy xoa node mostLeft
+            node.right = remove(node.right, mostLeft.value);
         }
 
         return node;
     }
-
     public void remove(int value) {
         root = remove(root, value);
     }
 
     private void preOrder(Node node) {
-        if (node == null)
-            return;
+        if (node == null) return;
         System.out.print(node.value + " ");
         preOrder(node.left);
         preOrder(node.right);
     }
-
-    public void preOrder() {
-        preOrder(root);
-        System.out.println();
-    }
-
     private void inOrder(Node node) {
-        if (node == null)
-            return;
-        inOrder(node.left);
-        System.out.print(node.value + " ");
-        inOrder(node.right);
+        if (node != null) {
+            inOrder(node.left);
+            System.out.print(node.value + " ");
+            inOrder(node.right);
+        }
     }
-
-    public void inOrder() {
-        inOrder(root);
-        System.out.println();
-    }
-
     private void postOrder(Node node) {
-        if (node == null)
-            return;
-        postOrder(node.left);
-        postOrder(node.right);
-        System.out.print(node.value + " ");
+        if (node != null) {
+            postOrder(node.left);
+            postOrder(node.right);
+            System.out.print(node.value + " ");
+        }
     }
 
-    public void postOrder() {
-        postOrder(root);
+    public static enum TraversalType {
+        PREORDER, INORDER, POSTORDER
+    }
+    public void traverse(TraversalType type) {
+        switch (type) {
+            case PREORDER:
+                preOrder(root);
+                break;
+            case INORDER:
+                inOrder(root);
+                break;
+            case POSTORDER:
+                postOrder(root);
+                break;
+            default:
+                break;
+        }
         System.out.println();
     }
 }
 
-class Utilities {
-    public static void swapData(BinaryTree.Node a, BinaryTree.Node b) {
-        var temp = a.value;
-        a.value = b.value;
-        b.value = temp;
+class Util {
+    public static void swap(BinaryTree.Node node1, BinaryTree.Node node2) {
+        var temp = node1.value;
+        node1.value = node2.value;
+        node2.value = temp;
     }
 }

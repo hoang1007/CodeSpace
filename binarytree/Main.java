@@ -7,8 +7,8 @@ public class Main {
         for (int i : tokens)
             tree.insert(i);
         
-        tree.preOrder();
+        tree.traverse(BinaryTree.TraversalType.PREORDER);
         tree.remove(3);
-        tree.preOrder();
+        tree.traverse(BinaryTree.TraversalType.PREORDER);
     }
 }
