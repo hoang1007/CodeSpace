@@ -1,12 +1,19 @@
+import structures.*;
+
 public class Main {
     public static void main(String[] args) {
-        int[] tokens = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        String[] tokens = new String[] { "ao", "ma", "ca", "na", "da"};
 
-        Stack stack = new Stack();
-        for (int i : tokens) {
-            stack.push(i);
+        LinkedList<String> links = new LinkedList<String>();
+
+        for (var item : tokens) {
+            links.pushBack(item);
         }
 
-        stack.print();
+        links.print();
+        links.insert(1, "that day");
+        links.print();
+        links.remove(1);
+        links.print();
     }
 }
