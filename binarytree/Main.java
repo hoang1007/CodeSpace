@@ -10,5 +10,7 @@ public class Main {
         tree.traverse(BinaryTree.TraversalType.PREORDER);
         tree.remove(3);
         tree.traverse(BinaryTree.TraversalType.PREORDER);
+        tree.remove(1);
+        tree.traverse(BinaryTree.TraversalType.PREORDER);
     }
 }
